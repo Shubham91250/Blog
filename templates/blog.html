@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<main class="container">
+    <div class="p-4 p-md-6 mb-5 rounded bg-light border shadow-sm">
+        <div class="row">
+            <div class="carousel-item active">
+                <img src="{% static 'images/blog.jpg' %}" class="d-block w-100" alt="Slide 1">
+                <div class="container">
+                  <div class="carousel-caption text-start">
+                    <h1>Indian Army</h1>
+                    
+                    <p><a class="btn btn-lg btn-primary" href="#">Continue reading..</a></p>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+      
+    
+    
+    <div class="row mb-2">
+      {% for obj in popularobj %}
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary-emphasis"></strong>
+            <!-- <img src="media/{{obj.images}}" class="img-fluid rounded-start" alt="my images"> -->
+            <h3 class="mb-0">{{obj.title}}</h3>
+            <div class="mb-1 text-body-secondary">{{obj.author}}</div>
+            <p class="card-text mb-auto">{{obj.content|safe| truncatechars:120}}</p>
+            <a href="{% url 'show_blog' obj.pk %}" class="icon-link gap-1 icon-link-hover stretched-link">
+              Continue reading
+              <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+            </a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="200" height="250" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                <rect width="100%" height="100%" fill="#55595c"/>
+                <image href="/media/{{obj.images}}" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+            </svg>
+        </div>
+        
+          
+        </div>
+      </div>  
+      {% endfor %}
+    </div>
+    
+    <div class="row g-5">
+      <div class="col-md-8">
+  
+        <article class="blog-post">
+          <h2 class="display-5 link-body-emphasis mb-1">Indian blog post</h2>
+          <p class="blog-post-meta">January 26, 2023 by shubham</p>
+  
+          <p>The Indian Army is the world's second-largest military force and the largest volunteer army. It has over 1.2 million active troops and 0.9 million reserve troops.</p>
+          <hr>
+          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+          <h2>OPERATION PYTHON-1971</h2>
+          <p>The mission is well remembered as “Operation Python”.</p>
+          <blockquote class="blockquote">
+            <p>Indo-Pakistan War of 1971</p>
+          </blockquote>
+          <p>After the primary assault during Operation Trident on the Port of Karachi, Pakistan ventured up airborne observation of its coast as the nearness of enormous Indian Navy ships gave the feeling that another assault was being arranged. Pakistani warships endeavoured to defeat the Indian Navy by blending with shipper shipping. To counter these moves, Operation Python was propelled in the evening of 8th or 9th December 1971.</p>
+          <h3>Indian Army</h3>
+          <ul>
+            <li>Indian defence forces are divided into three parts viz, Army, Navy and Air Force.</li>
+            <li>Everybody knows Indian Army as another name of courage</li>
+            <li>Indian Army has a long and glorious history which is full of victories over enemies.</li>
+            <li>Indian Army is committed to save the country from land based attacks by enemy forces.</li>
+            <li>Indian Army is the helping hand of other agencies in various military operations.</li>
+            <li>It also rescues people from natural calamities occurring in any part of India.</li>
+          </ul> 
+          
+        </article>
+  
+        <article class="blog-post">
+          <h2 class="display-5 link-body-emphasis mb-1">Defending Basantar Bridge During the 1971 Indo-Pak War</h2>
+          <p class="blog-post-meta">December 23, 2023 by <a href="{% url 'about' %}">shubham</a></p>
+  
+          <p>Arun Khetarpal single-handedly destroyed numerous Pakistani tanks and troops, denying Pakistan to enter the Indian soil. During the 1971 Indo-Pak war, a bridge was constructed across Basantar river so that the soldiers could crack the enemy-mine field. But half way through, the enemy raided the bridge.</p>
+          <blockquote>
+            <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
+          </blockquote>
+          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+          <h3>List of Freedom Fighters</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Born in</th>
+                <th>Died on	</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mahatma Gandhi</td>
+                <td>02 October 1869 </td>
+                <td>30 January 1948</td>
+              </tr>
+              <tr>
+                <td>Bhagat Singh</td>
+                <td>28 September 1907</td>
+                <td>23 March 1931</td>
+              </tr>
+              <tr>
+                <td>Rani Laksmibai</td>
+                <td>19 November  1835</td>
+                <td> 17 June  1858</td>
+              </tr>
+            </tbody> 
+          </table>
+  
+          <h4 class="text text-center " style="text-shadow: 0 0 3px #FF0000;">"Jai Hind"</h4>
+        </article>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-body-tertiary rounded">
+            <h4 class="fst-italic">About</h4>
+            <p class="mb-0">It is the world's second-largest standing army and the largest army. The President of India is the Supreme Commander of the Indian Army, and it is commanded by the Chief of Army Staff (COAS), who is a four-star general. Two battalions of the Indian Army have been awarded the "Nations in conflict" peacekeeping medal.</p>
+          </div>
+  
+          <div>
+            <h4 class="fst-italic">Recent posts</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                  <svg class="bd-placeholder-img" width="100%" height="96"  preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                  <img src="{% static 'images/Vikram_Batra_PVC.jpg' %}" width="100%" height="96" preserveAspectRatio="xMidYMid slice"/>
+                  </svg>
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">Captain Vikram Batra</h6>
+                    <small class="text-body-secondary">9 September 1974</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                  <svg class="bd-placeholder-img" width="100%" height="96"  preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                  <img src="{% static 'images/subedar.jpg' %}" width="100%" height="96" preserveAspectRatio="xMidYMid slice"/>
+                  </svg>
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">Subedar Yogendra Singh Yadav</h6>
+                    <small class="text-body-secondary">10 May 1980</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                  <svg class="bd-placeholder-img" width="100%" height="96"  preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                  <img src="{% static 'images/bana.jpg' %}" width="100%" height="96" preserveAspectRatio="xMidYMid slice"/>
+                  </svg>
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">Subedar Karam Singh</h6>
+                    <small class="text-body-secondary">15 September 1915</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="p-4">
+            <h4 class="fst-italic">Follow for more</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/Shubham9125055">Git hub       <img src="{% static 'images/logo_git.png' %}"  style="height:20px; width:20px;"></a></li>
+              <li><a href="https://www.linkedin.com/in/shubham-gupta-46b680222/">linkedin     <img src="{% static "images/link_logo.webp" %}" style="height:20px; width:20px;"></a></li>
+              <li><a href="https://www.instagram.com/shubhamgupta91250/?next=%2F" >instagram <img src="{% static 'images/instalogo.jpg' %}" style="height:20px; width:40px; "></a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </main>
+
+{% endblock body %}

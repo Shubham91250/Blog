@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="colour" style="background-colour:#D65608;">
+<div class="container text-center">
+    <h1 class="my-2">IIMT Group of Colleges established in the year 1994.</h1>
+    <div class="row">
+      <div class="col" style="border-black;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.9364283073933!2d77.48942247458217!3d28.481461090926576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce8ba81555555%3A0x738ac1a025bee778!2sIIMT%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1691080125299!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      
+      <div class="col">
+        <div class=" background-images container px-4 px-lg-5 ">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg col-xl">
+        
+                    <h2 class="mt-0">Contact </h2>
+                    <hr class="divider" />
+                    <p class="text-muted mb-5">Feel free to contact me !</p>
+                </div>
+            </div>
+            <div class="row  justify-content-center mb-5">
+                <div class="col-lg">
+                    <form id="contactForm" action="" method="post">
+                        {% csrf_token %}
+                        <!-- Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..."
+                                data-sb-validations="required" />
+                            <label for="name">Full name</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com"
+                                data-sb-validations="required,email" />
+                            <label for="email">Email address</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" name="phone" type="phone" placeholder="(123) 456-7890"
+                                data-sb-validations="required" />
+                            <label for="phone">Phone number</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                        </div>
+                        <!-- Message input-->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..."
+                                style="height: 10rem" data-sb-validations="required"></textarea>
+                            <label for="message">Message</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                        </div>
+                        <!-- Submit and Reset Buttons-->
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" id="submitButton" type="submit">Submit</button>
+                            <button class="btn btn-danger" type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                    <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                    <div>+(91) 9125055676 </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/army.jpg' %}" class="d-block w-100" alt="Slide 1">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Indian Army.</h1>
+              
+              <p><a class="btn btn-lg btn-primary" href="{% url 'blog' %}">Read more</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/blog.jpg' %}" class="d-block w-100" alt="Slide 1">
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Indian Army.</h1>
+                
+                <p><a class="btn btn-lg btn-primary" href="{% url 'blog' %}">Read more</a></p>
+              </div>
+            </div>
+          </div>
+      
+      
+      <!-- Other carousel items here -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<section class="container " style="background-color:#8080ff; max-width: 1334px; height:500px;">
+  <h1 class="text text-center" style="color: white;"> My Blog</h1>
+  <div class="row text-center justify-content-evenly">
+  <div class="card" style=" background-color:  #ffccff; width: 18rem;">
+    <img src="{% static 'images/army_1.webp' %}" class="card-img-top" alt="..." >
+    <div class="card-body">
+      <h5 class="card-title">Indian Army</h5>
+      <p class="card-text">The Indian Army is the land-based branch and largest component of the Indian Armed Forces.</p>
+      <a href="{% url 'blog' %}" class="btn btn-primary">Explore More</a>
+    </div>
+  </div>
+  <div class="card" style="background-color:  #ffccff; width: 18rem;">
+    <img src="{% static 'images/code.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Coding language</h5>
+      <p class="card-text">A coding language, or programming language, is a set of instructions that developers use to communicate with computers.</p>
+      <a href="#" class="btn btn-primary">Explore More</a>
+    </div>
+  </div>
+  <div class="card" style="background-color:  #ffccff; width: 18rem;">
+    <img src="{% static 'images/fitness1.png' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Physical fitness</h5>
+      <p class="card-text">Physical fitness involves the performance of the heart and lungs, and the muscles of the body.</p>
+      <a href="#" class="btn btn-primary">Explore More</a>
+    </div>
+  </div>
+  <div>
+  </section>
+{% endblock body %}

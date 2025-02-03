@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<section class="container container-responsive" style="background-color:#8533ff; max-width: 1334px;">
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-lg-6">
+        <div class="shadow p-3 mb-3 bg-#b088b5 rounded" style="background-color:#b088b5; width: 500px; height: 450px;">
+          <div class="card-body card-responsive">
+            <h1 class="card-title text ">Hello!,</h1>
+            <p class="card-text card-responsive" style="font-size: 30px;">My Name is <b>Shubham Gupta</b>. I'm currently pursuing B.Tech from <b>IIMT Engineering College</b>.</p>
+            <p class="card-text card-responsive"  style="font-size:30px;">I  use the language  to create the blog are - <b><span class="auto-type"></span></b></p>
+          </div>
+          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var typed = new Typed(".auto-type", {
+                    strings: ["Python.", "Bootstrap.", "Javascript.", "Django."],
+                    typeSpeed: 100,
+                    backSpeed: 100,
+                    loop: true
+                });
+            });
+        </script>
+        </div>
+      </div>
+      <div class="col-10 col-sm-8 col-lg-6 ">
+        <img src="{% static 'images/boss1.jpg' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400" height="400" loading="lazy" style="border-radius: 25px 20px;">
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<section class="container">
+  
+</section>
+
+{% endblock body %}
